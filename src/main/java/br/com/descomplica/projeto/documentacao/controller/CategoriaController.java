@@ -26,6 +26,7 @@ public class CategoriaController {
 	@Autowired
 	CategoriaService categoriaService;
 	
+	@SuppressWarnings("null")
 	@GetMapping
 	@Operation(summary="Listar todas as categorias", description  = "Listagem de Categorias")
 	@ApiResponses(value = { 
@@ -41,6 +42,7 @@ public class CategoriaController {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 	}
 	
+	@SuppressWarnings("null")
 	@GetMapping("/{id}")
 	public ResponseEntity<Categoria> getById(@PathVariable Integer id) {
 		Categoria categoria = categoriaService.getById(id);
@@ -55,6 +57,7 @@ public class CategoriaController {
 		return new ResponseEntity<>(categoriaService.saveCategoria(categoria), HttpStatus.CREATED);
 	}
 	
+	@SuppressWarnings("null")
 	@PutMapping("/{id}")
 	public ResponseEntity<Categoria> updateCategoria(@PathVariable Integer id, @RequestBody Categoria categoria) {
 		Categoria categoriaAtualizada = categoriaService.updateCategoria(id, categoria);

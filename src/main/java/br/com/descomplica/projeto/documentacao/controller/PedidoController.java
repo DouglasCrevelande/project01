@@ -32,6 +32,7 @@ public class PedidoController {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 	}
 	
+	@SuppressWarnings("null")
 	@GetMapping("/{id}")
 	public ResponseEntity<Pedido> getById(@PathVariable Integer id) {
 		Pedido pedido = pedidoService.getById(id);
