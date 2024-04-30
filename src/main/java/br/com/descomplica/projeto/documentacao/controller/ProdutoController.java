@@ -23,6 +23,7 @@ public class ProdutoController {
 	@Autowired
 	ProdutoService produtoService;
 	
+	@SuppressWarnings("null")
 	@GetMapping
 	public ResponseEntity<List<Produto>> getAll(){
 		List<Produto> produtos = produtoService.getAll();
@@ -32,6 +33,7 @@ public class ProdutoController {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 	}
 	
+	@SuppressWarnings("null")
 	@GetMapping("/{id}")
 	public ResponseEntity<Produto> getById(@PathVariable Integer id) {
 		Produto produto = produtoService.getById(id);
@@ -46,6 +48,7 @@ public class ProdutoController {
 		return new ResponseEntity<>(produtoService.saveProduto(produto), HttpStatus.CREATED);
 	}
 	
+	@SuppressWarnings("null")
 	@PutMapping("/{id}")
 	public ResponseEntity<Produto> updateProduto(@PathVariable Integer id, @RequestBody Produto produto) {
 		Produto produtoAtualizada = produtoService.updateProduto(id, produto);

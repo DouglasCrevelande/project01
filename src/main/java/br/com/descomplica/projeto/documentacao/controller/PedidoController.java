@@ -23,6 +23,7 @@ public class PedidoController {
 	@Autowired
 	PedidoService pedidoService;
 	
+	@SuppressWarnings("null")
 	@GetMapping
 	public ResponseEntity<List<Pedido>> getAll(){
 		List<Pedido> pedidos = pedidoService.getAll();
@@ -47,6 +48,7 @@ public class PedidoController {
 		return new ResponseEntity<>(pedidoService.savePedido(pedido), HttpStatus.CREATED);
 	}
 	
+	@SuppressWarnings("null")
 	@PutMapping("/{id}")
 	public ResponseEntity<Pedido> updatePedido(@PathVariable Integer id, @RequestBody Pedido pedido) {
 		Pedido pedidoAtualizada = pedidoService.updatePedido(id, pedido);
